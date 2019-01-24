@@ -33,7 +33,7 @@ then
     echo "Running Code Sniffer. Code standard PSR2."
     for FILE in $SFILES
     do
-        php $PROJECT/$BIN_DIR/phpcs --standard=PSR2 --colors --encoding=utf-8 $PROJECT/$FILE
+        php $PROJECT/$BIN_DIR/phpcs --standard=PSR2 --colors --encoding=utf-8 $PROJECT/$FILE --ignore=$PROJECT/database/,$PROJECT/routes/,$PROJECT/resources/
         if [ $? != 0 ]
         then
             FAILED=true
